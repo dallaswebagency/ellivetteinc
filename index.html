@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ellivette Cleaning Services Inc. | Residential and Commercial Cleaning in Edmonton</title>
+<meta name="description" content="Ellivette Cleaning Services Inc. provides residential and commercial cleaning in Edmonton, Alberta. Promotion of healthy environments. Available 24/7.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#080cc5">
+<link rel="icon" type="image/png" href="images/badge.png">
+<style>
+@font-face{font-family:"Archivo Var";src:url(fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap}
+@font-face{font-family:"Digits";src:url(fonts/archivo-var.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;unicode-range:U+0030-0039;font-display:swap}
+@font-face{font-family:"Atkinson Var";src:url(fonts/atkinson-next-var.woff2) format("woff2");font-weight:200 800;font-display:swap}
+
+:root{
+  --blue:#080cc5;      /* sampled from the Ellivette logo badge */
+  --navy:#05063f;
+  --gold:#c9963a;      /* eagle gold */
+  --gold-lt:#efc875;
+  --ink:#34343c;       /* logo grey */
+  --mist:#edeffb;
+  --paper:#ffffff;
+  --display:"Archivo Var","Arial Narrow",Arial,sans-serif;
+  --body:"Digits","Atkinson Var","Segoe UI",Arial,sans-serif;
+}
+@property --wipe{syntax:"<percentage>";inherits:true;initial-value:100%}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;font:400 1.0625rem/1.6 var(--body);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);margin:0;color:var(--navy)}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1240px;margin:0 auto;padding-left:24px;padding-right:24px}
+section[id]{scroll-margin-top:84px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.6rem;font:700 1rem/1 var(--body);text-decoration:none;padding:1rem 1.5rem;border-radius:5px;border:2px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.btn--gold{background:var(--gold);color:var(--navy)}
+.btn--gold:hover{background:var(--gold-lt)}
+.btn--line{border-color:rgba(255,255,255,.55);color:#fff}
+.btn--line:hover{background:#fff;color:var(--blue)}
+.btn--blue{background:var(--blue);color:#fff}
+.btn--blue:hover{background:var(--navy)}
+.btn svg{width:1.15em;height:1.15em;flex:none}
+
+/* utility strip */
+.util{background:var(--navy);color:#d7d9f5;font-size:.875rem}
+.util .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:42px}
+.util ul{display:flex;flex-wrap:wrap;gap:6px 26px}
+.util li{display:flex;align-items:center;gap:8px}
+.util svg{width:15px;height:15px;color:var(--gold-lt);flex:none}
+.util a{text-decoration:none}
+.util a:hover{color:#fff;text-decoration:underline}
+.util .soc{display:flex;gap:6px}
+.util .soc a{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.08)}
+.util .soc a:hover{background:var(--gold);color:var(--navy);text-decoration:none}
+.util .soc svg{color:currentColor}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #dfe2f4}
+.site-header .wrap{display:flex;align-items:center;gap:32px;min-height:78px}
+.brand{display:block;flex:none}
+.brand img{height:52px;width:auto}
+.nav{margin-left:auto}
+.nav ul{display:flex;gap:6px}
+.nav a{display:block;padding:.6rem 1rem;text-decoration:none;font:600 1rem/1 var(--body);color:var(--navy);border-bottom:3px solid transparent}
+.nav a:hover{border-color:var(--gold)}
+.menu-btn{display:none;margin-left:auto;background:none;border:2px solid var(--navy);border-radius:5px;width:46px;height:42px;cursor:pointer;color:var(--navy)}
+.menu-btn svg{width:22px;height:22px;margin:auto}
+
+/* hero */
+.hero{background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.hero__stage{position:relative;overflow:hidden}
+.hero__stage::before{content:"";position:absolute;right:-12%;top:-30%;width:62vw;height:62vw;max-width:880px;max-height:880px;border-radius:50%;border:2px solid rgba(239,200,117,.35)}
+.hero__grid{position:relative;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:64px;align-items:center;padding-top:76px;padding-bottom:64px}
+.hero h1{color:#fff;font-weight:800;font-stretch:108%;font-size:clamp(2.5rem,4.7vw,4.7rem);line-height:.96;letter-spacing:-.022em}
+.hero__sub{margin-top:26px;font:700 clamp(1.1rem,1.6vw,1.4rem)/1.3 var(--display);font-stretch:104%;color:var(--gold-lt)}
+.hero__copy{margin-top:16px;max-width:30rem;font-size:1.125rem;color:#dfe1fb}
+.hero__cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+/* the window with squeegee wipe */
+.window{position:relative;padding-bottom:30px;animation:wipe 1.9s cubic-bezier(.55,0,.25,1) .4s both}
+@keyframes wipe{from{--wipe:0%}to{--wipe:100%}}
+.window__frame{position:relative;border:14px solid #fff;box-shadow:20px 20px 0 var(--navy);background:#fff}
+.window__frame::after{content:"";position:absolute;inset:0;border:3px solid var(--gold);pointer-events:none;z-index:2}
+.window__frame img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.frost{position:absolute;inset:0;z-index:1;clip-path:inset(0 0 0 var(--wipe));background:linear-gradient(115deg,rgba(255,255,255,.78),rgba(206,216,255,.62) 55%,rgba(255,255,255,.7));-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.track{position:absolute;left:14px;right:14px;top:14px;bottom:44px;z-index:3;pointer-events:none}
+.blade{position:absolute;top:-12px;bottom:-10px;left:var(--wipe);width:12px;margin-left:-6px;background:var(--navy);border-radius:2px;animation:bladeOut .35s ease 2.35s both}
+.blade::before{content:"";position:absolute;top:-30px;left:50%;width:58px;height:34px;margin-left:-29px;background:var(--gold);border-radius:9px 9px 3px 3px}
+@keyframes bladeOut{to{opacity:0}}
+.sill{position:absolute;left:-30px;right:-12px;bottom:0;height:30px;background:#fff;border-bottom:7px solid var(--gold);z-index:4}
+.window__frame{z-index:3}
+
+.facts{position:relative;border-top:1px solid rgba(255,255,255,.28);display:grid;grid-template-columns:repeat(4,1fr)}
+.facts li{padding:22px 24px 24px 0;font-size:1rem;line-height:1.35;color:#dfe1fb}
+.facts li+li{padding-left:24px;border-left:1px solid rgba(255,255,255,.2)}
+.facts b{display:block;font:700 1.1rem/1.25 var(--display);font-stretch:104%;color:#fff;margin-bottom:2px}
+
+/* section heads */
+.kicker{display:inline-block;font:700 1rem/1 var(--body);color:var(--blue);padding:0 0 8px;border-bottom:3px solid var(--gold);margin-bottom:20px}
+h2{font-weight:780;font-stretch:106%;font-size:clamp(1.9rem,3.4vw,3.1rem);line-height:1.04;letter-spacing:-.018em}
+
+/* about */
+.about{padding:112px 0 120px;background:#fff}
+.about__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:0 64px;align-items:start}
+.about__photo{position:relative}
+.about__photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 20%;box-shadow:-18px 18px 0 var(--mist)}
+.about__text p.lead{margin-top:22px;max-width:36rem;font-size:1.15rem}
+.sheet{position:relative;margin:44px 0 0 -104px;max-width:480px;background:#fff;border:2px solid var(--navy);padding:46px 34px 30px;box-shadow:12px 12px 0 var(--gold)}
+.sheet::before{content:"";position:absolute;top:-14px;left:50%;width:84px;height:28px;margin-left:-42px;background:var(--navy);border-radius:6px}
+.sheet::after{content:"";position:absolute;top:-4px;left:50%;width:36px;height:8px;margin-left:-18px;background:var(--gold);border-radius:4px}
+.sheet li{display:flex;align-items:center;gap:14px;padding:11px 0;border-bottom:1px dashed #c9cde6;font:600 1.05rem/1.3 var(--body);color:var(--navy)}
+.sheet li:last-of-type{border-bottom:0}
+.tick{flex:none;width:26px;height:26px;border:2px solid var(--navy);display:grid;place-items:center;background:var(--blue)}
+.tick svg{width:16px;height:16px;color:#fff}
+.sheet .btn{margin-top:22px}
+
+/* services house */
+.house{background:var(--mist);padding:104px 0 0;overflow:hidden}
+.house__wrap{max-width:1180px;margin:0 auto;padding:0 24px;position:relative}
+.roof{position:relative;height:clamp(230px,26vw,300px)}
+.roof::before{content:"";position:absolute;inset:0;background:var(--blue);clip-path:polygon(0 100%,50% 0,100% 100%);z-index:1}
+.chimney{position:absolute;left:71%;top:9%;width:46px;height:58%;background:var(--navy);z-index:0;border-top:8px solid var(--gold)}
+.attic{position:absolute;z-index:2;left:50%;top:15%;width:clamp(58px,7vw,84px);margin-left:calc(clamp(58px,7vw,84px) / -2);aspect-ratio:1;border-radius:50%;border:4px solid var(--gold);background:var(--blue) url(images/badge.png) center/cover}
+.roof__text{position:absolute;z-index:2;left:50%;bottom:22px;transform:translateX(-50%);width:min(560px,56%);text-align:center;color:#fff}
+.roof__text h2{color:#fff}
+.roof__text p{margin-top:10px;font-size:.98rem;line-height:1.45;color:#dfe1fb}
+.floors{background:var(--navy);padding:8px;display:grid;gap:8px}
+.floor{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:8px}
+.room{background:#fff;display:flex;flex-direction:column;min-width:0}
+.room>img{width:100%;flex:none;height:300px;object-fit:cover}
+.room__cap{padding:18px 20px 20px}
+.room h3{font-weight:720;font-stretch:104%;font-size:1.18rem;line-height:1.15}
+.room p{margin:8px 0 12px;font-size:.97rem;line-height:1.5}
+.book{font-weight:700;color:var(--blue);text-decoration:none;border-bottom:2px solid var(--gold);padding-bottom:1px}
+.book:hover{color:var(--navy)}
+.c4{grid-column:span 4}.c3{grid-column:span 3}.c5{grid-column:span 5}.c7{grid-column:span 7}
+.room--offer{position:relative;display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);background:var(--blue);color:#fff;min-height:300px}
+.room--offer>img{position:absolute;left:0;top:0;width:40%;height:100%;object-fit:cover}
+.room--offer .room__cap{grid-column:2}
+.room--offer .room__cap{padding:28px 34px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+.offer__big{font:800 clamp(3.2rem,6vw,5.2rem)/.9 var(--display);font-stretch:112%;color:var(--gold-lt);letter-spacing:-.03em}
+.offer__big small{font-size:.38em;letter-spacing:0;margin-left:.2em;color:#fff;font-weight:700}
+.room--offer p{color:#e4e6fc;font-size:1.1rem;margin:12px 0 20px}
+.ground{height:16px;background:var(--navy);margin:0 -60px}
+
+/* process */
+.process{background:var(--blue);color:#fff;padding:112px 0 124px;position:relative;overflow:hidden}
+.process h2{color:#fff}
+.process__head{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:56px}
+.process__head p{font-size:1.15rem;color:#dfe1fb;max-width:28rem}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;align-items:end}
+.step{position:relative}
+.step:nth-child(1){padding-bottom:0;margin-bottom:-110px}
+.step:nth-child(2){margin-bottom:-55px}
+.steps{padding-bottom:110px}
+.bubble{display:grid;place-items:center;width:168px;height:168px;background:url(images/bubble.png) center/cover no-repeat;border-radius:50%;font:800 3.6rem/1 var(--display);font-stretch:112%;color:var(--blue);margin-bottom:26px;box-shadow:0 0 0 6px rgba(255,255,255,.12)}
+.step h3{color:#fff;font-size:1.5rem;font-weight:720;font-stretch:104%;margin-bottom:10px}
+.step p{color:#dfe1fb;max-width:22rem}
+
+/* why */
+.why{padding:116px 0 120px;background:#fff}
+.why__top{display:grid;grid-template-columns:minmax(0,4.4fr) minmax(0,7.6fr);gap:72px;align-items:center}
+.why__photo{position:relative}
+.why__photo img{width:100%;aspect-ratio:545/651;object-fit:cover;box-shadow:18px 18px 0 var(--gold)}
+.play{position:absolute;right:-26px;bottom:34px;display:flex;align-items:center;gap:12px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;padding:10px 20px 10px 10px;border-radius:999px}
+.play span{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--gold);color:var(--navy)}
+.play svg{width:20px;height:20px;margin-left:3px}
+.play:hover{background:var(--blue)}
+.why__text p.lead{margin-top:20px;font-size:1.15rem;max-width:38rem}
+.stats{margin-top:34px;font:700 clamp(1.4rem,2.3vw,2rem)/1.3 var(--display);font-stretch:102%;color:var(--navy);max-width:38rem}
+.stats b{color:var(--blue);font-weight:800;font-stretch:112%;background:linear-gradient(transparent 70%,var(--gold-lt) 70%);padding:0 3px}
+.hangers{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:84px;padding-top:44px}
+.hangers::before{content:"";position:absolute;left:-12px;right:-12px;top:0;height:10px;background:var(--navy);border-radius:5px}
+.tag{position:relative;background:var(--mist);border:2px solid var(--navy);border-radius:8px 8px 26px 26px;padding:58px 26px 30px}
+.tag:nth-child(1){margin-top:14px}.tag:nth-child(2){margin-top:44px}.tag:nth-child(3){margin-top:0}
+.tag::before{content:"";position:absolute;top:18px;left:50%;width:20px;height:20px;margin-left:-10px;border-radius:50%;background:#fff;border:2px solid var(--navy)}
+.tag::after{content:"";position:absolute;bottom:100%;left:50%;width:2px;margin-left:-1px;height:var(--string,30px);background:var(--navy)}
+.tag:nth-child(1){--string:44px}.tag:nth-child(2){--string:74px}.tag:nth-child(3){--string:30px}
+.tag h3{font-weight:760;font-stretch:106%;font-size:1.35rem;margin-bottom:10px}
+
+/* booking form */
+.book-sec{background:var(--mist);padding:112px 0}
+.book-sec__grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+.contact-list{margin-top:34px;display:grid;gap:18px}
+.contact-list li{display:flex;gap:14px;align-items:flex-start;font-size:1.05rem}
+.contact-list .ico{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--blue);color:#fff}
+.contact-list svg{width:20px;height:20px}
+.contact-list b{display:block;color:var(--navy);font-weight:700}
+.contact-list a{text-decoration:none}
+.contact-list a:hover{text-decoration:underline}
+.form{background:var(--blue);color:#fff;padding:44px;box-shadow:16px 16px 0 var(--navy)}
+.form h3{color:#fff;font-size:1.6rem;font-weight:740;font-stretch:104%;margin-bottom:24px}
+.form__row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.field{display:block;margin-bottom:18px}
+.field span{display:block;font-weight:700;font-size:.95rem;margin-bottom:6px}
+.field input,.field select,.field textarea{width:100%;font:inherit;color:var(--navy);background:#fff;border:2px solid transparent;border-radius:4px;padding:.85rem 1rem}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid var(--gold);outline-offset:1px}
+
+/* testimonials */
+.voices{padding:116px 0 124px;background:#fff}
+.voices__head{max-width:40rem;margin-bottom:56px}
+.voices__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.slip{position:relative;background:#fff;border:2px solid var(--navy);padding:28px 28px 22px;display:flex;flex-direction:column;box-shadow:8px 8px 0 var(--mist)}
+.voices__side{grid-column:span 7;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.slip--wide{grid-column:span 2}
+.slip--lead{grid-column:span 5;background:var(--navy);color:#fff;box-shadow:8px 8px 0 var(--gold);border-color:var(--navy);padding:40px 36px 30px}
+.slip__who{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.avatar{flex:none;display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:var(--blue);color:#fff;font:800 1.05rem/1 var(--display)}
+.slip--lead .avatar{background:var(--gold);color:var(--navy)}
+.slip h3{font-size:1.15rem;font-weight:720;font-stretch:104%}
+.slip--lead h3{color:#fff}
+.slip blockquote{margin:0;font-size:1.08rem;line-height:1.55;flex:1}
+.slip--lead blockquote{font:500 clamp(1.35rem,2vw,1.8rem)/1.45 var(--display);font-stretch:100%;color:#fff;display:flex;align-items:center}
+.rate{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:20px;padding-top:16px;border-top:2px dashed #b9bedf;font-size:.95rem}
+.slip--lead .rate{border-color:rgba(255,255,255,.35)}
+.rate li{display:flex;align-items:center;gap:8px;color:#6b6d85}
+.slip--lead .rate li{color:#aeb1e4}
+.rate .box{width:18px;height:18px;border:2px solid currentColor;display:grid;place-items:center}
+.rate li.on{color:var(--navy);font-weight:700}
+.slip--lead .rate li.on{color:#fff}
+.rate li.on .box{background:var(--blue);border-color:var(--blue);color:#fff}
+.slip--lead .rate li.on .box{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+.rate svg{width:12px;height:12px}
+
+/* footer */
+.foot{background:var(--navy);color:#c9cbee;padding:88px 0 0}
+.foot__grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.4fr;gap:48px}
+.foot img.logo{height:54px;width:auto;margin-bottom:22px}
+.foot p.tagline{max-width:22rem;font-size:1.02rem}
+.foot h3{color:#fff;font-size:1.1rem;font-weight:720;font-stretch:104%;margin-bottom:18px}
+.foot li{margin-bottom:10px}
+.foot a{text-decoration:none}
+.foot a:hover{color:#fff;text-decoration:underline}
+.foot .soc{display:flex;gap:10px;margin-top:26px}
+.foot .soc a{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;border:2px solid rgba(255,255,255,.3);color:#fff}
+.foot .soc a:hover{background:var(--gold);border-color:var(--gold);color:var(--navy);text-decoration:none}
+.foot .soc svg{width:19px;height:19px}
+.foot address{font-style:normal;display:grid;gap:12px}
+.foot address div{display:flex;gap:12px;align-items:flex-start}
+.foot address svg{width:18px;height:18px;margin-top:4px;color:var(--gold-lt);flex:none}
+.foot__bar{margin-top:72px;border-top:1px solid rgba(255,255,255,.16)}
+.foot__bar .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding-top:22px;padding-bottom:26px;font-size:.95rem}
+.foot__bar a{color:var(--gold-lt);font-weight:700}
+
+/* responsive */
+@media (max-width:1060px){
+  .sheet{margin-left:-60px}
+  .hero__grid{gap:40px}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .facts li:nth-child(3){padding-left:0;border-left:0}
+  .facts li:nth-child(n+3){border-top:1px solid rgba(255,255,255,.2)}
+  .foot__grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .util .addr,.util .hrs{display:none}
+  .menu-btn{display:grid}
+  .nav{position:absolute;left:0;right:0;top:100%;background:#fff;border-bottom:1px solid #dfe2f4;display:none;margin:0}
+  .nav.open{display:block}
+  .nav ul{flex-direction:column;padding:10px 24px 18px;gap:0}
+  .nav a{padding:.9rem 0;border-bottom:1px solid #eceefa}
+  .site-header .btn{display:none}
+  .hero__grid{grid-template-columns:1fr;padding-top:52px;padding-bottom:48px}
+  .window{max-width:560px;margin-right:20px}
+  .about,.why,.book-sec,.voices{padding-top:80px;padding-bottom:84px}
+  .about__grid,.why__top,.book-sec__grid,.process__head{grid-template-columns:1fr;gap:44px}
+  .about__photo{max-width:420px}
+  .sheet{margin-left:0;margin-top:34px}
+  .house{padding-top:72px}
+  .roof{height:auto;padding:36px 0 30px;background:var(--blue)}
+  .roof::before,.chimney,.attic{display:none}
+  .roof__text{position:static;transform:none;width:auto;padding:0 24px;text-align:left}
+  .house__wrap{padding:0 16px}
+  .floor{grid-template-columns:1fr}
+  .floor>*{grid-column:auto!important}
+  .room>img{flex:none;height:230px}
+  .room--offer{grid-template-columns:1fr;min-height:0}
+  .room--offer>img{position:static;width:100%;height:200px}
+  .room--offer .room__cap{grid-column:auto}
+  .ground{margin:0 -16px}
+  .process{padding:80px 0 84px}
+  .steps{grid-template-columns:1fr;gap:44px;padding-bottom:0}
+  .step:nth-child(n){margin-bottom:0}
+  .bubble{width:130px;height:130px;font-size:2.8rem}
+  .hangers{grid-template-columns:1fr;gap:56px;margin-top:64px}
+  .tag:nth-child(n){margin-top:0}
+  .tag:nth-child(n)::after{height:34px}
+  .play{right:10px}
+  .form{padding:30px 22px;box-shadow:10px 10px 0 var(--navy)}
+  .form__row{grid-template-columns:1fr;gap:0}
+  .voices__grid{grid-template-columns:1fr}
+  .slip--lead,.voices__side{grid-column:auto}
+  .voices__side{grid-template-columns:1fr}
+  .slip--wide{grid-column:auto}
+}
+@media (max-width:560px){
+  .util .wrap{justify-content:center}
+  .util .soc{display:none}
+  .brand img{height:44px}
+  .facts{grid-template-columns:1fr}
+  .facts li{padding:16px 0!important;border-left:0!important}
+  .facts li+li{border-top:1px solid rgba(255,255,255,.2)}
+  .foot__grid{grid-template-columns:1fr;gap:36px}
+  .hero__cta .btn{width:100%;justify-content:center}
+  .window__frame{border-width:10px;box-shadow:12px 12px 0 var(--navy)}
+  .track{left:10px;right:10px;top:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .window{animation:none}
+  .frost,.blade{display:none}
+}
+</style>
+</head>
+<body id="top">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm4.3 13.7-5-3V7h1.8v4.7l4.1 2.5-.9 1.5Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1l-2.2 2.2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="currentColor" d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.2L4.6 7 4 8.4l8 5.4 8-5.4-.6-1.4-7.4 5.2Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.7 5 5 10-11"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.5v15l13-7.5-13-7.5Z"/></symbol>
+    <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.5-3.3h-3.3V8.4c0-.95.45-1.7 1.8-1.7h1.6V3.8A19 19 0 0 0 14.5 3.7c-2.6 0-4.3 1.6-4.3 4.4v2.4H7.4v3.3h2.8V22h3.3Z"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M17.8 3h3L14.2 10.6 22 21h-6.1l-4.8-6.3L5.6 21h-3l7.1-8.1L2.2 3h6.2l4.3 5.7L17.8 3Zm-1.1 16.2h1.7L7.6 4.7H5.8l10.9 14.5Z"/></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><path fill="currentColor" d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.2-3.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3 .78.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.25-.12-1.46-.72-1.7-.8-.22-.08-.4-.12-.56.12-.17.25-.64.8-.78.97-.14.16-.28.18-.53.06a6.7 6.7 0 0 1-3.3-2.9c-.25-.43.25-.4.72-1.33.08-.16.04-.3-.02-.42-.06-.12-.56-1.35-.76-1.85-.2-.48-.4-.42-.56-.43h-.47a.9.9 0 0 0-.66.3c-.22.25-.86.84-.86 2.05s.88 2.38 1 2.55c.12.16 1.73 2.64 4.2 3.7 1.55.67 2.15.73 2.93.62.47-.07 1.46-.6 1.66-1.17.2-.58.2-1.07.14-1.17-.06-.1-.22-.16-.47-.28Z"/></symbol>
+  </defs>
+</svg>
+
+<div class="util">
+  <div class="wrap">
+    <ul>
+      <li class="addr"><svg><use href="#i-pin"/></svg>204F - 15123-45 Ave NW. T6H-5K8 Edmonton, Alberta, Canada</li>
+      <li class="hrs"><svg><use href="#i-clock"/></svg>Mon - Fri: 06:00am - 08:00pm</li>
+      <li><svg><use href="#i-phone"/></svg><a href="tel:+17803990947">+1 (780) 399-0947</a></li>
+      <li><svg><use href="#i-mail"/></svg><a href="mailto:thenoblesjeby@ellivetteinc.ca">thenoblesjeby@ellivetteinc.ca</a></li>
+    </ul>
+    <div class="soc">
+      <a href="https://web.facebook.com/ellivettecleaninginc" aria-label="Facebook"><svg width="16" height="16"><use href="#i-fb"/></svg></a>
+      <a href="https://x.com/ellivetteinc" aria-label="X"><svg width="16" height="16"><use href="#i-x"/></svg></a>
+      <a href="https://www.instagram.com/ellivettecleaninginc" aria-label="Instagram"><svg width="16" height="16"><use href="#i-ig"/></svg></a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Ellivette Cleaning Services Inc. home"><img src="images/logo.png" alt="Ellivette Cleaning Services Inc." width="351" height="98"></a>
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul>
+        <li><a href="#top">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--gold" href="https://wa.me/12046984794">Get A Quote</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="nav" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero__stage">
+  <div class="wrap hero__grid">
+    <div>
+      <h1>Promotion of healthy environments.</h1>
+      <p class="hero__sub">Residential and Commercial Cleaning Services</p>
+      <p class="hero__copy">Our deep and comprehensive cleaning services complete our task leaving spotless and organized spaces that enhance clients’ comfort and value for money.</p>
+      <div class="hero__cta">
+        <a class="btn btn--gold" href="https://wa.me/12046984794">Request An Estimate</a>
+        <a class="btn btn--line" href="#contact">Find The Nearest Office</a>
+      </div>
+    </div>
+    <div class="window">
+      <div class="window__frame">
+        <img src="images/hero-window.jpg" alt="Smiling Ellivette cleaner in a blue apron holding two cleaning spray bottles" width="1400" height="1050" fetchpriority="high">
+        <div class="frost"></div>
+      </div>
+      <div class="track" aria-hidden="true"><span class="blade"></span></div>
+      <div class="sill"></div>
+    </div>
+  </div>
+  </div>
+  <div class="wrap">
+    <ul class="facts">
+      <li><b>Available 24/7</b>Regular schedule or on-demand, with overnight options when needed.</li>
+      <li><b>Residential and Commercial</b>General cleaning for business and home spaces.</li>
+      <li><b>Specialty cleaning</b>Window cleaning and pressure washing of any area of concern.</li>
+      <li><b>30% off weekly</b>Discount on weekly subscription.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about__grid">
+    <div class="about__photo">
+      <img src="images/about-kitchen.jpg" alt="Ellivette team member in a blue apron and pink gloves cleaning a kitchen" width="900" height="1199" loading="lazy">
+    </div>
+    <div class="about__text">
+      <span class="kicker">About Us</span>
+      <h2>Available 24/7, on a regular schedule or on demand.</h2>
+      <p class="lead">Our team of professional, dedicated and motivated staff deliver timely and reliable services, including overnight options when needed.</p>
+      <div class="sheet">
+        <ul>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span>Experienced Team</li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span>Kitchen Cleaning</li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span>Living Room Cleaning</li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span>Bathrooms Cleaning</li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span>Toilet Cleaning</li>
+          <li><span class="tick"><svg><use href="#i-check"/></svg></span>Extra Cleaning Service</li>
+        </ul>
+        <a class="btn btn--blue" href="https://wa.me/12046984794">Book a Service</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="house" id="services">
+  <div class="house__wrap">
+    <div class="roof">
+      <span class="chimney"></span>
+      <span class="attic" role="img" aria-label="Ellivette eagle badge"></span>
+      <div class="roof__text">
+        <h2>Cleaning Services</h2>
+        <p>At Ellivette Cleaning Services Inc., we’re committed to providing top-notch cleaning services that leave your home sparkling clean.</p>
+      </div>
+    </div>
+    <div class="floors">
+      <div class="floor">
+        <article class="room c4">
+          <img src="images/room-bedroom.jpg" alt="Cleaner making a bed in a bedroom" width="610" height="580" loading="lazy" style="object-position:50% 60%">
+          <div class="room__cap">
+            <h3>Bedroom Cleaning &amp; Organization</h3>
+            <p>Transform your bedroom into a serene oasis with our expert cleaning services. Dust and polish furniture, lamps, and knick-knacks. Vacuum and mop floors.</p>
+            <a class="book" href="https://wa.me/12046984794">Book Now</a>
+          </div>
+        </article>
+        <article class="room c4">
+          <img src="images/room-bathroom.jpg" alt="Cleaner scrubbing bathroom tiles" width="610" height="580" loading="lazy">
+          <div class="room__cap">
+            <h3>Bathrooms</h3>
+            <p>Enjoy a clean and hygienic bathroom. We’ll scrub toilets, sinks, tubs, and tiles, leaving your bathroom sparkling and fresh.</p>
+            <a class="book" href="https://wa.me/12046984794">Book Now</a>
+          </div>
+        </article>
+        <article class="room c4">
+          <img src="images/room-office.jpg" alt="Cleaner working at an office desk" width="610" height="580" loading="lazy">
+          <div class="room__cap">
+            <h3>Office Cleaning &amp; Organization</h3>
+            <p>Transform your office into a haven of productivity with our professional cleaning and organization services.</p>
+            <a class="book" href="https://wa.me/12046984794">Book Now</a>
+          </div>
+        </article>
+      </div>
+      <div class="floor">
+        <article class="room c5">
+          <img src="images/room-living.jpg" alt="Cleaner vacuuming a living room carpet" width="610" height="541" loading="lazy">
+          <div class="room__cap">
+            <h3>Living Room Cleaning &amp; Organization</h3>
+            <p>Relax in a pristine living room. We’ll dust furniture, polish surfaces, and vacuum carpets. Deep carpet cleaning that will leave your carpet looking brand new.</p>
+            <a class="book" href="https://wa.me/12046984794">Book Now</a>
+          </div>
+        </article>
+        <article class="room c3">
+          <img src="images/room-dining.jpg" alt="Cleaner wiping a dining table" width="610" height="580" loading="lazy">
+          <div class="room__cap">
+            <h3>Dining Room Cleaning &amp; Organization</h3>
+            <p>Get your dining room sparkling clean with our professional cleaning services.</p>
+            <a class="book" href="https://wa.me/12046984794">Book Now</a>
+          </div>
+        </article>
+        <article class="room c4">
+          <img src="images/room-deep-clean.jpg" alt="Cleaner in a high-visibility vest cleaning a kitchen" width="610" height="580" loading="lazy">
+          <div class="room__cap">
+            <h3>Residential and Commercial Cleaning Services</h3>
+            <p>Deep cleaning services meticulously designed for residential spaces, providing intensive and detailed cleaning.</p>
+            <a class="book" href="https://wa.me/12046984794">Book Now</a>
+          </div>
+        </article>
+      </div>
+      <div class="floor">
+        <article class="room c5">
+          <img src="images/room-extra.jpg" alt="Woman washing dishes at a kitchen sink" width="610" height="408" loading="lazy">
+          <div class="room__cap">
+            <h3>Extra Services</h3>
+            <p>For an extensive deep cleaning and organization of various spaces in your facility consider our extra services. Laundry service: we wash, dry, and fold your clothes for you.</p>
+            <a class="book" href="https://wa.me/12046984794">Book Now</a>
+          </div>
+        </article>
+        <article class="room room--offer c7">
+          <img src="images/offer-supplies.jpg" alt="Basket of cleaning supplies with yellow gloves" width="672" height="1663" loading="lazy" style="object-position:50% 78%">
+          <div class="room__cap">
+            <div class="offer__big">30%<small>off</small></div>
+            <p>We offer 30% discount on weekly subscription.</p>
+            <a class="btn btn--gold" href="https://wa.me/12046984794">Book Us</a>
+          </div>
+        </article>
+      </div>
+    </div>
+    <div class="ground"></div>
+  </div>
+</section>
+
+<section class="process">
+  <div class="wrap">
+    <div class="process__head">
+      <h2>Our Working Process</h2>
+      <p>Ready to experience the difference? Book your cleaning appointment today!</p>
+    </div>
+    <ol class="steps" style="list-style:none;margin:0;padding-left:0">
+      <li class="step">
+        <div class="bubble" aria-hidden="true">1</div>
+        <h3>Initial Consultation</h3>
+        <p>We may conduct an initial consultation to understand the client’s needs, preferences, and specific areas that require attention.</p>
+      </li>
+      <li class="step">
+        <div class="bubble" aria-hidden="true">2</div>
+        <h3>Preparation / Cleaning</h3>
+        <p>Clients are often advised to tidy up and put away personal belongings to facilitate the cleaning process. This helps the cleaning crew focus on the actual cleaning tasks.</p>
+      </li>
+      <li class="step">
+        <div class="bubble" aria-hidden="true">3</div>
+        <h3>Feedback and Follow-Up</h3>
+        <p>After the cleaning is done, we may seek feedback from the client to improve future services and address any concerns.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="why__top">
+      <div class="why__photo">
+        <img src="images/team.jpg" alt="Cleaning team in blue uniforms with mops and a cleaning cart" width="545" height="651" loading="lazy">
+        <a class="play" href="https://www.youtube.com/watch?v=yK7XbZSLVkY"><span><svg><use href="#i-play"/></svg></span>Play Video</a>
+      </div>
+      <div class="why__text">
+        <span class="kicker">Why Choose Us</span>
+        <h2>We will make absolutely any space clean, neat &amp; tidy.</h2>
+        <p class="lead">We envision clean and organized environments and the safety of properties and personal belongings of our Clients.</p>
+        <p class="stats"><b>60</b> happy clients, <b>15</b> expert workers, <b>60</b> projects done and <b>4</b> years of experience.</p>
+      </div>
+    </div>
+    <div class="hangers">
+      <article class="tag">
+        <h3>Move Out Cleaning</h3>
+        <p>Leaving your old place? We’ll make sure it shines! Our move-out cleaning service will leave your property sparkling clean, ready for the next tenant.</p>
+      </article>
+      <article class="tag">
+        <h3>Move In Cleaning</h3>
+        <p>Ready to move into your new home? Let us make it sparkle! Our move-in cleaning service will give your new space a fresh start, leaving it clean and sanitized.</p>
+      </article>
+      <article class="tag">
+        <h3>24/7 Service</h3>
+        <p>Life doesn’t always follow a 9-to-5 schedule, and neither do we! Our 24/7 service means you can book your cleaning appointment at any time, day or night, to fit your busy schedule.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="book-sec" id="contact">
+  <div class="wrap book-sec__grid">
+    <div>
+      <span class="kicker">Have you any question?</span>
+      <h2>You can contact us if you have any query.</h2>
+      <ul class="contact-list">
+        <li><span class="ico"><svg><use href="#i-phone"/></svg></span><div><b>Quick Contact</b><a href="tel:+17803990947">+1 (780) 399-0947</a></div></li>
+        <li><span class="ico"><svg><use href="#i-mail"/></svg></span><div><b>E-mail Us</b><a href="mailto:thenoblesjeby@ellivetteinc.ca">thenoblesjeby@ellivetteinc.ca</a></div></li>
+        <li><span class="ico"><svg><use href="#i-clock"/></svg></span><div><b>Working Hours</b>Mon - Fri: 06:00am - 08:00pm</div></li>
+        <li><span class="ico"><svg><use href="#i-pin"/></svg></span><div><b>Corporate Office</b>204F - 15123-45 Ave NW. T6H-5K8 Edmonton, Alberta, Canada</div></li>
+      </ul>
+    </div>
+    <form class="form" id="bookingForm" action="#" method="post">
+      <h3>Online Booking Form</h3>
+      <div class="form__row">
+        <label class="field"><span>Name</span><input type="text" name="name" autocomplete="name" required></label>
+        <label class="field"><span>Phone</span><input type="tel" name="phone" autocomplete="tel" required></label>
+      </div>
+      <div class="form__row">
+        <label class="field"><span>Email</span><input type="email" name="email" autocomplete="email" required></label>
+        <label class="field"><span>Select Service</span>
+          <select name="service" required>
+            <option value="" disabled selected>Select Service</option>
+            <option>Residential</option>
+            <option>Commercial</option>
+          </select>
+        </label>
+      </div>
+      <label class="field"><span>Your Message</span><textarea name="message"></textarea></label>
+      <button class="btn btn--gold" type="submit">Submit Now</button>
+    </form>
+  </div>
+</section>
+
+<section class="voices">
+  <div class="wrap">
+    <div class="voices__head">
+      <span class="kicker">Testimonials</span>
+      <h2>What clients say</h2>
+    </div>
+    <div class="voices__grid">
+      <article class="slip slip--lead">
+        <div class="slip__who"><span class="avatar" aria-hidden="true">JS</span><h3>Jim Scotte</h3></div>
+        <blockquote>Ellivette cleaning service is a top-notch in Edmonton. They clean to shine every corner of our home. Our kids were comfortable and immediately started to enjoy their toys and other play items that became spotless.</blockquote>
+        <ul class="rate">
+            <li class="on"><span class="box"><svg><use href="#i-check"/></svg></span>Happy</li>
+            <li><span class="box"></span>Satisfied</li>
+            <li><span class="box"></span>Very Good Service</li>
+          </ul>
+      </article>
+      <div class="voices__side">
+        <article class="slip slip--wide">
+          <div class="slip__who"><span class="avatar" aria-hidden="true">JS</span><h3>Jean Schoenwetter</h3></div>
+          <blockquote>I was impressed about the detailed cleaning services provided by Ellivette that transformed our home into a serene and comfortable environment.</blockquote>
+          <ul class="rate">
+            <li><span class="box"></span>Happy</li>
+            <li class="on"><span class="box"><svg><use href="#i-check"/></svg></span>Satisfied</li>
+            <li><span class="box"></span>Very Good Service</li>
+          </ul>
+        </article>
+        <article class="slip">
+          <div class="slip__who"><span class="avatar" aria-hidden="true">F</span><h3>Fred</h3></div>
+          <blockquote>Ellivette has a well trained and organized team. The workers have always exhibited professionalism and competence at their work.</blockquote>
+          <ul class="rate">
+            <li class="on"><span class="box"><svg><use href="#i-check"/></svg></span>Happy</li>
+            <li><span class="box"></span>Satisfied</li>
+            <li><span class="box"></span>Very Good Service</li>
+          </ul>
+        </article>
+        <article class="slip">
+          <div class="slip__who"><span class="avatar" aria-hidden="true">EB</span><h3>Elliot Bans</h3></div>
+          <blockquote>They provide extra amazing service. We were happy to return home to see great work done by Ellivette Cleaning Service.</blockquote>
+          <ul class="rate">
+            <li><span class="box"></span>Happy</li>
+            <li><span class="box"></span>Satisfied</li>
+            <li class="on"><span class="box"><svg><use href="#i-check"/></svg></span>Very Good Service</li>
+          </ul>
+        </article>
+        <article class="slip slip--wide">
+          <div class="slip__who"><span class="avatar" aria-hidden="true">Y</span><h3>Yvon</h3></div>
+          <blockquote>Thank you for the exceptional service.</blockquote>
+          <ul class="rate">
+            <li><span class="box"></span>Happy</li>
+            <li class="on"><span class="box"><svg><use href="#i-check"/></svg></span>Satisfied</li>
+            <li><span class="box"></span>Very Good Service</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__grid">
+    <div>
+      <img class="logo" src="images/logo-dark.png" alt="Ellivette Cleaning Services Inc." width="351" height="98" loading="lazy">
+      <p class="tagline">To build Trust, commitment and a strong dedicated team to provide services that exceed our customers’ expectation.</p>
+      <div class="soc">
+        <a href="https://web.facebook.com/ellivettecleaninginc" aria-label="Facebook"><svg><use href="#i-fb"/></svg></a>
+        <a href="https://x.com/ellivetteinc" aria-label="X"><svg><use href="#i-x"/></svg></a>
+        <a href="https://www.instagram.com/ellivettecleaninginc" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+        <a href="https://wa.me/12046984794" aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h3>Services</h3>
+      <ul>
+        <li><a href="https://ellivetteinc.ca/service/bedroom-cleaning/">Bedroom Cleaning &amp; Organization</a></li>
+        <li><a href="https://ellivetteinc.ca/service/extra-services/">Extra Services</a></li>
+        <li><a href="https://ellivetteinc.ca/service/kitchen-cleaning/">Kitchen Cleaning</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="https://ellivetteinc.ca/offers/">Offers</a></li>
+        <li><a href="https://ellivetteinc.ca/pricing-table-1/">Pricing Table</a></li>
+        <li><a href="https://ellivetteinc.ca/faq-page/">FAQ Page</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Corporate Office</h3>
+      <address>
+        <div><svg><use href="#i-pin"/></svg><span>204F - 15123-45 Ave NW. T6H - 5K8 Edmonton - Alberta, Canada</span></div>
+        <div><svg><use href="#i-phone"/></svg><a href="tel:+17803990947">+1 (780) 399-0947</a></div>
+        <div><svg><use href="#i-mail"/></svg><a href="mailto:thenoblesjeby@ellivetteinc.ca">thenoblesjeby@ellivetteinc.ca</a></div>
+      </address>
+    </div>
+  </div>
+  <div class="foot__bar">
+    <div class="wrap">
+      <span>© <span id="yr">2026</span> Ellivette Cleaning Services Inc. All Rights Reserved.</span>
+      <span>Design by <a href="https://cleaningdigital.ca/">Cleaning Digital</a>.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.getElementById('menuBtn'),n=document.getElementById('nav');
+  b.addEventListener('click',function(){var o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  n.addEventListener('click',function(e){if(e.target.tagName==='A'){n.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  document.getElementById('bookingForm').addEventListener('submit',function(e){
+    e.preventDefault();
+    var f=e.target,v=function(k){return f.elements[k].value.trim()};
+    var t='Hello Ellivette, I would like to book a cleaning.%0AName: '+encodeURIComponent(v('name'))+'%0APhone: '+encodeURIComponent(v('phone'))+'%0AEmail: '+encodeURIComponent(v('email'))+'%0AService: '+encodeURIComponent(v('service'))+(v('message')?'%0AMessage: '+encodeURIComponent(v('message')):'');
+    window.open('https://wa.me/12046984794?text='+t,'_blank','noopener');
+  });
+})();
+</script>
+</body>
+</html>
